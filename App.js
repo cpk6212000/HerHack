@@ -26,12 +26,13 @@ import {
 import LoggedOut from './src/screen/LoggedOut';
 import HelloWorldApp from './src/component/HelloWorld';
 import Profile from './src/component/Profile';
+import Login from './src/screen/Login';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 const MainNavigator = createStackNavigator({
   Landing:{screen: LoggedOut},
-  Home: {screen: Profile}
+  Login: {screen: Login}
 })
 
 const App = createAppContainer(MainNavigator)
