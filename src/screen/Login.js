@@ -13,9 +13,11 @@ export default class Login extends Component {
   }
   handleTextInput = (value) => {
     this.props.inputType == "email" ? this.setState({email:value}):this.setState({password:value})
+    //console.log(this.state);
   }
   render() {
-    const {email,password} = this.state;
+    //const {email,password} = this.state;
+    const {navigate} = this.props.navigation;
     return (
     <KeyboardAvoidingView style={styles.wrapper} behavior="padding">
       <View style={styles.scrollViewWrapper}>
@@ -29,7 +31,7 @@ export default class Login extends Component {
           borderBottomColor={colors.white}
           inputType="email"
           customStyle={{marginBottom:30}}
-          onChange={this.handleTextInput}
+          //onChange={this.handleTextInput}
           />
           <InputField 
           labelText="Password" 
@@ -39,10 +41,10 @@ export default class Login extends Component {
           borderBottomColor={colors.white}
           inputType="password"
           customStyle={{marginBottom:30}}
-          onChange={this.handleTextInput}
+          //onChange={this.handleTextInput}
           />
         </ScrollView>
-        <NextArrowButton />
+        <NextArrowButton onPress={()=>navigate('Map')} />
       </View>
     </KeyboardAvoidingView>
     );

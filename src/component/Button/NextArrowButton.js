@@ -6,9 +6,12 @@ import colors from "../../style/color";
 
 class NextArrowButton extends Component {
     render(){
+        const {onPress} = this.props;
         return(
             <View style={styles.buttonWrapper}>
-                <TouchableHighlight style={[{opacity:0.6},styles.button]}>
+                <TouchableHighlight 
+                style={[{opacity:0.6},styles.button]}
+                onPress={onPress}>
                     <Text>>></Text>
                 </TouchableHighlight>
             </View>

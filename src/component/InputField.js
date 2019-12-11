@@ -11,7 +11,7 @@ class InputField extends Component {
         borderBottomColor,
         inputType,
         customStyle,
-        onChange
+        //onChange
      } = this.props;
      const color = labelColor || colors.white;
      const fontSize = labelTextSize || 14;
@@ -25,7 +25,7 @@ class InputField extends Component {
             styles.inputFiled
         ]}
         secureTextEntry={inputType === "password"}
-        onChangeText={(input) => onChange(input)}
+        //onChangeText={(input) => onChange(input)}
         />
       </View>
     );
