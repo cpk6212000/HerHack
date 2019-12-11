@@ -52,7 +52,7 @@ export default class LoggedOut extends Component {
                 <RoundedButton text='Connect to HSBC'
                 textColor={colors.green01}
                 background={colors.white}
-                onPress={()=>navigate('Home')} />
+                onPress={()=>navigate('Login')} />
             </View>
         </View>
        )
