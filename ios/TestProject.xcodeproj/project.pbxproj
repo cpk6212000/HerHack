@@ -76,6 +76,7 @@
 		48ECD6A123A0ED0E003FE718 /* AIRGoogleMapPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD66823A0ED0E003FE718 /* AIRGoogleMapPolygon.m */; };
 		48ECD6A223A0ED0E003FE718 /* AIRGMSMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD66923A0ED0E003FE718 /* AIRGMSMarker.m */; };
 		48ECD6A323A0ED0E003FE718 /* AIRGoogleMapCalloutSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 48ECD66A23A0ED0E003FE718 /* AIRGoogleMapCalloutSubview.m */; };
+		48FC242323A2A85300880ABF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48FC242223A2A85300880ABF /* MapKit.framework */; };
 		E91F341EAC234F0E85C8126F /* libPods-TestProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D03CD678BEB5E1A922A59D9E /* libPods-TestProjectTests.a */; };
 /* End PBXBuildFile section */
 
@@ -227,6 +228,7 @@
 		48ECD66823A0ED0E003FE718 /* AIRGoogleMapPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRGoogleMapPolygon.m; sourceTree = "<group>"; };
 		48ECD66923A0ED0E003FE718 /* AIRGMSMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRGMSMarker.m; sourceTree = "<group>"; };
 		48ECD66A23A0ED0E003FE718 /* AIRGoogleMapCalloutSubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIRGoogleMapCalloutSubview.m; sourceTree = "<group>"; };
+		48FC242223A2A85300880ABF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4A0D0605626AAE977762ABED /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 		6688A17CE5B6C0793E45F99D /* libPods-TestProject-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestProject-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C89506F17BBB7730C8EF7D7 /* Pods-TestProject-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-TestProject-tvOSTests/Pods-TestProject-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48FC242323A2A85300880ABF /* MapKit.framework in Frameworks */,
 				1A613E799C1FCA0BA6594E08 /* libPods-TestProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +315,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48FC242223A2A85300880ABF /* MapKit.framework */,
 				48ECD5A023A0EA25003FE718 /* libGoogle-Maps-iOS-Utils.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
@@ -1057,6 +1061,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"HAVE_GOOGLE_MAPS=1",
+				);
 				INFOPLIST_FILE = TestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1076,6 +1086,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"HAVE_GOOGLE_MAPS=1",
+				);
 				INFOPLIST_FILE = TestProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

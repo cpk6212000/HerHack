@@ -29,12 +29,21 @@ import Profile from './src/component/Profile';
 import Login from './src/screen/Login';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import MapTest from './src/screen/MapTest';
+import MapScreen from './src/screen/MapScreen';
 
 const MainNavigator = createStackNavigator({
-  Landing:{screen: LoggedOut},
-  Login: {screen: Login},
-  Map:{screen: MapTest}
+  Landing:{screen: LoggedOut,
+  navigationOptions:{
+    title: ""
+  }},
+  Login: {screen: Login,
+  navigationOptions:{
+    title: "Login"
+  }},
+  Map:{screen: MapScreen,
+  navigationOptions:{
+    title:"Map"
+  }}
 })
 
 const App = createAppContainer(MainNavigator)
