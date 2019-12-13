@@ -14,6 +14,8 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableWithoutFeedback,
+  Button
 } from 'react-native';
 
 import {
@@ -31,20 +33,33 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import MapScreen from './src/screen/MapScreen';
 
-const MainNavigator = createStackNavigator({
-  Landing:{screen: LoggedOut,
-  navigationOptions:{
-    title: ""
-  }},
-  Login: {screen: Login,
-  navigationOptions:{
-    title: "Login"
-  }},
-  Map:{screen: MapScreen,
-  navigationOptions:{
-    title:"Map"
-  }}
-})
+const MainNavigator = createStackNavigator(
+  {
+    Landing:{screen: LoggedOut,
+    navigationOptions:{
+      title: "",
+      headerRight: () => <Text></Text>
+    }},
+    Login: {screen: Login,
+    navigationOptions:{
+      title: "Login"
+    }},
+    Map:{screen: MapScreen,
+    navigationOptions:{
+      title:"Map"
+    }},
+  },
+  {
+    defaultNavigationOptions:({navigation}) => ({
+      headerRight: () => (
+        <Button
+          onPress={() => navigation.navigate('Map')}
+          title="Profile"
+          color="#000"
+        />) 
+    }),
+  }
+)
 
 const App = createAppContainer(MainNavigator)
 

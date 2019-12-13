@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 import colors from '../../style/color/index';
 export default class RoundedButton extends Component {
 render() {
-    const {text,textColor, background, onPress} = this.props;
+    const {text,textColor, background, onPress, style} = this.props;
     const backgroundColor = background || 'transparent'
     const color = textColor || colors.black
       return(
@@ -17,7 +17,8 @@ render() {
 RoundedButton.propTypes = {
     text : propTypes.string.isRequired,
     color: propTypes.string,
-    backgroundColor: propTypes.string
+    backgroundColor: propTypes.string,
+    style: propTypes.any
 }
 
 const styles = StyleSheet.create({
@@ -26,7 +27,8 @@ const styles = StyleSheet.create({
       display: "flex",
       borderRadius: 40,
       borderWidth: 1,
-      borderColor: colors.white
+      borderColor: colors.white,
+      marginBottom: 20
     },
     buttonText: {
       fontSize: 16,
