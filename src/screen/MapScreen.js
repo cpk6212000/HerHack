@@ -1,13 +1,12 @@
 import React, {Component} from "react";
-import {View, StyleSheet} from "react-native";
+import {View, StyleSheet, TouchableWithoutFeedback, Keyboard, Button} from "react-native";
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 import Geolocation from 'react-native-geolocation-service';
+import PlaceInput from "../component/PlaceInput";
 const styles = StyleSheet.create({
  container: {
    ...StyleSheet.absoluteFillObject,
    flex: 1,
-   justifyContent: 'flex-end',
-   alignItems: 'center',
  },
  map: {
    ...StyleSheet.absoluteFillObject,
@@ -21,6 +20,9 @@ export default class MapScreen extends Component {
       userLatitude : 0,
       userLongtude : 0
     }
+  }
+  hideKeyboard(){
+    Keyboard.dismiss();
   }
   componentDidMount= () => {
     this.locationId = Geolocation.watchPosition(
@@ -41,7 +43,10 @@ export default class MapScreen extends Component {
     Geolocation.clearWatch(this.locationId)
   }
   render(){
-    return(<View style={styles.container}>
+    return(
+      <TouchableWithoutFeedback onPress={this.hideKeyboard}>
+    <View style={styles.container}>
+      
       <MapView
         followsUserLocation
         showsUserLocation
@@ -55,6 +60,8 @@ export default class MapScreen extends Component {
         }}
       >
       </MapView>
-    </View>)
+      <PlaceInput/>
+    </View>
+    </TouchableWithoutFeedback>)
   }
 };
